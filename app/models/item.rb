@@ -14,4 +14,6 @@ class Item < ApplicationRecord
   validates :image_url, presence: {
     message: "L'image doit être renseigné."
   }
+
+  has_and_belongs_to_many :orders
 end
