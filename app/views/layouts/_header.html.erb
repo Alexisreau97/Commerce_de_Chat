@@ -45,8 +45,8 @@
             <li>        
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => "nav-link" %>
             </li>
-            <li>
-                <%= current_user.email %>
+            <li>        
+            <%= link_to "Edit", edit_user_registration_path, :class => "nav-link" %>
             </li>
 
         <%  else %>
