@@ -5,13 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 require 'json'
 require 'faker'
 
 
-20.times do
-	item = Item.create(title: Faker::Commerce.product_name, 
-    description: Faker::Lorem.sentences(1), 
-    price: Faker::Commerce.price,
-	image_url: Faker::Internet.url)
+
+20.times do |item|
+  items = Item.create!(title: Faker::Cat.name, description: Faker::Lorem.paragraph, price: Faker::Commerce.price ,image_url: Faker::Avatar.image)
 end
