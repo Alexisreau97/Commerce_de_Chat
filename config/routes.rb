@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :items
-  root 'home#index'
+
+  root 'home#index3'
   devise_for :users
+
+  resources :items
+
+  resources :charges, only: [:new, :create]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
