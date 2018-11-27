@@ -19,3 +19,11 @@
  *=	require fancybox/css/jquery.fancybox.min
  *=	require boomerang.min
  */
+
+.form_container {
+	margin: 10% 10% 5% 10%;
+}
+
+.background_color {
+	background-color: #bdbdbd;
+}
