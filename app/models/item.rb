@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  validates :title, presence: {
+	validates :title, presence: {
     message: "Le titre doit être renseigné."
   }
 
@@ -15,6 +15,7 @@ class Item < ApplicationRecord
     message: "L'image doit être renseigné."
   }
 
+  has_one_attached :item_image
   has_and_belongs_to_many :orders
   has_and_belongs_to_many :carts
 end
