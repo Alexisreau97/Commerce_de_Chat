@@ -4,15 +4,25 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = Item.all.order(:id)
   end
+
+
+
+  
 
   # GET /items/1
   # GET /items/1.json
   def show
+
+
      puts "Heyy Item show"
         @item = Item.find(params[:id])
+
   end
+
+
+
 
   # GET /items/new
   def new
@@ -57,6 +67,7 @@ class ItemsController < ApplicationController
   # DELETE /items/1.json
   def destroy
     @item.destroy
+    @item.item_image.purge
     respond_to do |format|
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
