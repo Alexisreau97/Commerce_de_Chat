@@ -1,6 +1,6 @@
 <h2>Panier</h2>
 <ul>
-  <% @cart.line_items.each do |element| %>
+  <% cart.line_items.each do |element| %>
     <li><%= element.item.title %> (X <%= element.quantity %>) <span class="badge badge-info"><%= number_to_currency(element.total, unit: "€", separator: ",", format: "%n %u") %>
 </li>
   <% end %>
