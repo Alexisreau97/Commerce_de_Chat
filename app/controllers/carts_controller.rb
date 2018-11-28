@@ -1,4 +1,7 @@
 class CartsController < ApplicationController
+rescue_from ActiveRecord::RecordNotFound, with: :cart_not_found
+
+
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
 
   # GET /carts
@@ -54,15 +57,25 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy
+    return unless @cart.id == session[:cart_id]
     @cart.destroy
+    session.delete(:cart_id)
     respond_to do |format|
-      format.html { redirect_to carts_url, notice: 'Cart was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: "Votre panier est vide" }
       format.json { head :no_content }
-    end
+        end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
+
+
+private
+
+
+    def cart_not_found
+      redirect_to root_url, alert: t(".cart_not_found")
+    end
+
+       # Use callbacks to share common setup or constraints between actions.
     def set_cart
       @cart = Cart.find(params[:id])
     end

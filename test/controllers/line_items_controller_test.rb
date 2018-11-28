@@ -16,6 +16,9 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create line_item" do
+    tshirt = items(:one)
+
+
     assert_difference('LineItem.count') do
       post line_items_url, params: { line_item: { cart_id: @line_item.cart_id, item_id: @line_item.item_id, quantity: @line_item.quantity } }
     end
