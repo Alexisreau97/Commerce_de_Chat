@@ -150,7 +150,7 @@
   <div class="row mb-4">
     <div class="card w-50 bg-light">
       <div class="card-body">
-        <h2 class="card-title"><%= item.title %></h2>
+        <h2 class="card-title"><%= link_to item.title,item,class:"btn btn-primary btn-block" %></h2>
         <div class="row">
           <div class="col-6">
             <%= image_tag(item.item_image, width: "200") %>
