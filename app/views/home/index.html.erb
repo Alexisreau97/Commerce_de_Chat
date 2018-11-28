@@ -148,16 +148,32 @@
 
 <% @items.each do |item| %>
   <div class="row mb-4">
-    <div class="card bg-light">
+    <div class="card w-50 bg-light">
       <div class="card-body">
-        <h2 class="card-title text-center"><%= item.title %></h2>
-            <%= image_tag(item.item_image, width: "200") %><br><br>
-            <%= link_to "voir plus", item, class:"btn btn-primary btn-block" %>
+        <h2 class="card-title"><%= link_to item.title,item,class:"btn btn-primary btn-block" %></h2>
+        <div class="row">
+          <div class="col-6">
+            <%= image_tag(item.item_image, width: "200") %>
+          </div>
+          <div class="col-6">
+            <div class="card-text"><%= sanitize(item.description) %></div>
+          </div>
+        </div>
       </div>
+
+
 
       <div class="card-footer text-center font-weight-bold">
         <%= number_to_currency item.price, unit: '€', separator: ',', format: '%n %u' %>
       </div>
+
+        <div class="card-footer">
+                            <%= link_to "Edit" ,edit_item_path(item) , class: "btn btn-default" %>
+                            <%= link_to "Delete" ,item , :confirm => "Are you sure?" , :method => :delete , class: "btn btn-danger"%>
+                             <%= button_to "Ajouter au panier" ,line_items_path(item_id: item), class: "btn btn-primary" %>
+        </div>
+   
+
     </div>
   </div>
 <% end %>
