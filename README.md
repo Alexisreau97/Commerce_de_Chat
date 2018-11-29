@@ -10,3 +10,8 @@ https://commercedechat291118.herokuapp.com/
 - 4242 4242 4242 4242
 - a three-digit CVC
 - any expiry date in the future
+
+
+###### Activestorage :
+On peut éditer les images des chats en cliquant sur Edit ici :
+https://commercedechat291118.herokuapp.com/items/
