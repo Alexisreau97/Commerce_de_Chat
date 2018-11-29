@@ -13,5 +13,6 @@ https://commercedechat291118.herokuapp.com/
 
 
 ###### Activestorage :
-On peut éditer les images des chats en cliquant sur Edit ici :
+On peut éditer, ajouter, supprimer un produit avec des images ici :
 https://commercedechat291118.herokuapp.com/items/
+A terme, cette page ne sera accessible que par les administrateurs
