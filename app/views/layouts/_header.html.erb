@@ -35,6 +35,14 @@
             <li>        
                 <%= link_to "Edit", edit_user_registration_path, :class => "nav-link" %>
             </li>
+
+                <% if isAdmin? %>
+            <li>
+               <%= link_to "Liste des Commandes", [:admin,], :class => "nav-link" %>
+            </li>
+                <% end %>
+
+
         <% else %>
             <li>        
                 <%= link_to "Se connecter", new_user_session_path, :class => "nav-link" %>
