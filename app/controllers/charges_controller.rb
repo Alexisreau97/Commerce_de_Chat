@@ -20,6 +20,11 @@ def create
     :currency    => 'eur'
   )
 
+
+    #Mail de bienvenue envoyé lors de la commande
+    UserMailer.welcome_email(params[:stripeEmail]).deliver_now
+    
+
 rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to new_charge_path

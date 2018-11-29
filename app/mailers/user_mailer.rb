@@ -1,9 +1,9 @@
 class UserMailer < ApplicationMailer
-    def welcome_email(user)
-        @user = user
+    def welcome_email
+        
       mail(
-          from: "ratsimisampy@gmail.com", 
-          to: @user, 
+          from: "ratsimisampy@yahoo.fr", 
+          to: "ratsimisampy@yahoo.fr", 
           subject: "Petit message de bienvenue")
      
    end
@@ -11,11 +11,11 @@ class UserMailer < ApplicationMailer
    def user_order(email, cart)
      @email = email
      @cart = cart
-     mail(from: "ratsimisampy@gmail.com", to: email, subject: "Votre commande")
+     mail(from: "ratsimisampy@yahoo.fr", to: email, subject: "Votre commande")
     end
  
     def admin_order(amount)
      @amount = amount
-      mail(from: "ratsimisampy@gmail.com", to: "admin_thpcatshopping@gmail.com", subject: "Nouvelle commande passée")
+      mail(from: "ratsimisampy@yahoo.fr", to: "ratsimisampy@yahoo.fr", subject: "Nouvelle commande passée")
  end
 end

@@ -36,11 +36,18 @@ class OrdersController < ApplicationController
         session.delete(:cart_id)
         format.html { redirect_to root_path, notice: "Commande validée" }
         format.json { render :show, status: :created, location: @order }
+
+        #Mail de confirmation de commande avec montant de la commande et les images
+      UserMailer.user_order(params[:stripeEmail], @cart).deliver_now
+      #Mail envoyé à l'admin avec montant de la commande
+      UserMailer.admin_order(@amount).deliver_now
       else
         format.html { render :new }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
+
+    
   end
 
   # PATCH/PUT /orders/1
