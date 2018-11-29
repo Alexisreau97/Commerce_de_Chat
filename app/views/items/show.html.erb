@@ -29,3 +29,9 @@
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
+
+<% if user_signed_in? %>
+
+                             <%= button_to "Ajouter au panier" ,line_items_path(item_id: @item), class: "btn btn-primary" %>
+
+                            <% end %>
