@@ -156,12 +156,11 @@
                         <center> <%= image_tag(item.item_image, width: "200") %> </center>
                         <% end %>
                         <div class="card-title"><%= link_to "voir plus", item, class:"btn btn-primary btn-block" %></div>
-                        </div>
+                  </div>
 
-                            <% if user_signed_in? %>
-                              <center><%= button_to "Ajouter au panier" ,line_items_path(item_id: item), class: "btn btn-primary" %></center>
-                             <% end %>
-
+                        <% if user_signed_in? %>
+                          <center><%= button_to "Ajouter au panier" ,line_items_path(item_id: item), class: "btn btn-primary" %></center>
+                         <% end %>
 
                   <div class="card-footer text-center font-weight-bold">
                     <%= number_to_currency item.price, unit: '€', separator: ',', format: '%n %u' %>
