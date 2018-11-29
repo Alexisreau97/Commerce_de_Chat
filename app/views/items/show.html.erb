@@ -19,24 +19,20 @@
             <%= @item.price %> €
           </p>
 
+          <br><br>
 
-          <div class="col-lg-6">
-        <% if @item.item_image.attached? %>
-          <%= image_tag(@item.item_image, :class => "item-img" ) %> </
-        <% end %>
+          <% if user_signed_in? %>
+              <center><%= button_to "Ajouter au panier", line_items_path(item_id: @item), class: "btn btn-primary" %></center>
+          <% end %>
         </div>
 
 
-          <br><br>
-
-
-
-          <% if user_signed_in? %>
-                              <center><%= button_to "Ajouter au panier", line_items_path(item_id: @item), class: "btn btn-primary" %></center>
-                             <% end %>
-
-             <br><br>
-
+        <div class="col-lg-6">
+          <% if @item.item_image.attached? %>
+          <%= image_tag(@item.item_image, :class => "item-img" ) %> </
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </body>
