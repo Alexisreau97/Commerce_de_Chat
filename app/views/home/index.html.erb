@@ -152,7 +152,9 @@
                 <div class="card bg-light">
                   <div class="card-body">
                         <h2 class="card-title text-center"><%= link_to item.title,item %></h2>
+                        <% if item.item_image.attached? %>
                         <center> <%= image_tag(item.item_image, width: "200") %> </center>
+                        <% end %>
                         <div class="card-title"><%= link_to "voir plus", item, class:"btn btn-primary btn-block" %></div>
                         </div>
 
