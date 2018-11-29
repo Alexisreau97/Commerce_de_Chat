@@ -72,4 +72,3 @@ gem 'stripe'
 gem 'mailjet'
 
 gem "aws-sdk-s3", require: false
-
