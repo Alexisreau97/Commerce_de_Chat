@@ -23,9 +23,19 @@
 
           <%= button_to "Ajouter au panier", line_items_path(item_id: @item), class: "btn btn-primary" %>
         </div>
-        <div class="col-lg-6">
+
+
+          <% if item.item_image.attached? %>
+             <div class="col-lg-6">
           <%= image_tag @item.item_image, :class => "item-img" %>
         </div>
+                        <% end %>
+
+
+
+
+
+        
     </div>
   </div>
 </body>
