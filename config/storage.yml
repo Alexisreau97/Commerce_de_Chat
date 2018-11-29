@@ -12,7 +12,7 @@ amazon:
   access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
   region: https://organizations.us-east-1.amazonaws.com/
-  bucket: activestoragerails271118.s3.ap-east-1.amazonaws.com:443
+  bucket: "activestoragerails271118"
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
